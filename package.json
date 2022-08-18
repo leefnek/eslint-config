@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-rudada",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "ESlint config for projects",
   "main": "index.js",
   "repository": {
