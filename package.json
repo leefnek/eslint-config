@@ -1,0 +1,16 @@
+{
+  "name": "eslint-config-rudada",
+  "version": "1.0.0",
+  "description": "ESlint config for projects",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leefnek/eslint-config.git"
+  },
+  "author": "rudada",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leefnek/eslint-config/issues"
+  },
+  "homepage": "https://github.com/leefnek/eslint-config#readme",
+}
