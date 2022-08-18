@@ -1,16 +1,18 @@
 name: publish
 
 on:
-  push:
-    branches: main
-    tags:
-      - v*
+  release:
+    types: [created]
 
 jobs:
   publish-npm:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          registry-url: https://registry.npmjs.org
       - name: Publish if version control is in place
         run: |
           export LATEST_VERSION=$(npm view eslint-config-rudada@latest version)
@@ -20,3 +22,5 @@ jobs:
           if [ $LATEST_VERSION != $CURRENT_VERSION ]; then
             npm publish
           fi
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
