@@ -1,0 +1,22 @@
+name: publish
+
+on:
+  push:
+    branches: main
+    tags:
+      - v*
+
+jobs:
+  publish-npm:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Publish if version control is in place
+        run: |
+          export LATEST_VERSION=$(npm view eslint-config-rudada@latest version)
+          export CURRENT_VERSION=$(npm pkg get version | tr -d '""')
+          echo $LATEST_VERSION
+          echo $CURRENT_VERSION
+          if [ $LATEST_VERSION != $CURRENT_VERSION ]; then
+            npm publish
+          fi
