@@ -105,7 +105,6 @@ module.exports = {
     'jest/no-mocks-import': 'off',
     'jest/valid-describe-callback': 'off',
     'jest/valid-expect-in-promise': 'off',
-    'storybook/prefer-pascal-case': 'error',
     'testing-library/await-fire-event': 'error',
     'testing-library/no-await-sync-events': 'error',
     'testing-library/no-global-regexp-flag-in-query': 'error',
@@ -125,6 +124,7 @@ module.exports = {
         'import/no-anonymous-default-export': 'off',
         'import/no-unused-modules': 'off',
         'react/jsx-props-no-spreading': 'off',
+        'storybook/prefer-pascal-case': 'error',
       },
     },
     {
